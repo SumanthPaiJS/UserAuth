@@ -1,8 +1,8 @@
-const { User } = require('../models/User')
+const { Revapp } = require('../models/Revapp')
 
 const authenticateRevAppliance = function(req, res, next){
     const token = req.header('x-auth')
-    User.findByToken(token)
+    Revapp.findByToken(token)
         .then(function (revapp) {
             if(revapp) {
                 req.revapp = revapp
